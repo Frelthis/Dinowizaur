@@ -1,7 +1,7 @@
 extends CharacterBody2D
 
 
-@export var SPEED = 300.0
+@export var SPEED = 400.0
 var target_velocity = Vector2.ZERO
 
 
