@@ -1,11 +1,11 @@
 [gd_scene load_steps=3 format=3 uid="uid://c0ul50s65kywp"]
 
-[ext_resource type="Script" path="res://enemy.gd" id="1_jx8sq"]
+[ext_resource type="Script" path="res://Enemy/enemy.gd" id="1_bik03"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ui7g8"]
 
 [node name="Enemy" type="Area2D"]
-script = ExtResource("1_jx8sq")
+script = ExtResource("1_bik03")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 

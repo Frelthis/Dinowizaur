@@ -1,0 +1,24 @@
+[gd_scene load_steps=6 format=3 uid="uid://c6hcjbccs4ja4"]
+
+[ext_resource type="Script" path="res://Player/player.gd" id="1_scof7"]
+[ext_resource type="Texture2D" uid="uid://djarcxdyfwend" path="res://icon.svg" id="2_3f6tr"]
+[ext_resource type="PackedScene" uid="uid://ucnvrhh5my8r" path="res://Weaponstuff/Weapons/weapon.tscn" id="4_1dm7f"]
+[ext_resource type="Script" path="res://States/State Machine.gd" id="4_671vh"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_lyjm2"]
+
+[node name="Player" type="CharacterBody2D"]
+motion_mode = 1
+script = ExtResource("1_scof7")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_lyjm2")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.208, 0.2)
+texture = ExtResource("2_3f6tr")
+
+[node name="weapon" parent="." instance=ExtResource("4_1dm7f")]
+
+[node name="State Machine" type="Node" parent="."]
+script = ExtResource("4_671vh")

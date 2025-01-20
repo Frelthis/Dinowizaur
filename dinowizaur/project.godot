@@ -60,3 +60,12 @@ pause={
 [input_devices]
 
 compatibility/legacy_just_pressed_behavior=true
+
+[layer_names]
+
+2d_physics/layer_1="Enemy Projectile"
+2d_physics/layer_2="Player Projectile"
+
+[physics]
+
+2d/physics_engine="GodotPhysics2D"
