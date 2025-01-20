@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://c6hcjbccs4ja4"]
+[gd_scene load_steps=6 format=3 uid="uid://c6hcjbccs4ja4"]
 
 [ext_resource type="Script" path="res://player.gd" id="1_scof7"]
 [ext_resource type="Texture2D" uid="uid://djarcxdyfwend" path="res://icon.svg" id="2_3f6tr"]
 [ext_resource type="Script" path="res://emiter.gd" id="3_ci5cx"]
+[ext_resource type="Script" path="res://Weapon States/weapon_state.gd" id="4_671vh"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_lyjm2"]
 
@@ -19,3 +20,6 @@ shape = SubResource("CircleShape2D_lyjm2")
 [node name="Emiter" type="Node2D" parent="."]
 position = Vector2(39, -67)
 script = ExtResource("3_ci5cx")
+
+[node name="WeaponState" type="Node" parent="."]
+script = ExtResource("4_671vh")
