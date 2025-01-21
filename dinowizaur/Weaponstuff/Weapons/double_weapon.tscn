@@ -1,0 +1,13 @@
+[gd_scene load_steps=2 format=3 uid="uid://doy2jtox0743o"]
+
+[ext_resource type="Script" path="res://Weaponstuff/Weapons/double_weapon.gd" id="1_g1clc"]
+
+[node name="doubleWeapon" type="Node2D"]
+script = ExtResource("1_g1clc")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+
+[node name="cooldown" type="Timer" parent="."]
+unique_name_in_owner = true
+wait_time = 0.05
+one_shot = true

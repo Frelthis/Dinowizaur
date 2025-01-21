@@ -1,12 +1,9 @@
-extends Node2D
-class_name Weapon
+extends Weapon
 
-@onready var main = get_tree().get_root().get_node("Main")
-@onready var bullet = load("res://Weaponstuff/Bullets/BasicBullet.tscn")
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass
+	pass # Replace with function body.
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -15,11 +12,17 @@ func _process(delta):
 		if $cooldown.is_stopped():
 			shoot()
 
-
 func shoot():
 	var instance = bullet.instantiate()
 	instance.direction = rotation
-	instance.spawnPos = global_position
+	instance.spawnPos.x = global_position.x +20
+	instance.spawnPos.y = global_position.y
 	#instance.spawnRotation = rotation
+	var instance2 = bullet.instantiate()
+	instance2.direction = rotation
+	instance2.spawnPos.x = global_position.x -20
+	instance2.spawnPos.y = global_position.y
+	#instance2.spawnRotation = rotation
 	main.add_child.call_deferred(instance)
+	main.add_child.call_deferred(instance2)
 	$cooldown.start()

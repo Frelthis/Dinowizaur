@@ -5,7 +5,7 @@ extends CharacterBody2D
 
 var direction: float
 var spawnPos: Vector2
-#var spawnRotation: float
+var spawnRotation: float
 var max_range := 300.0
 var _travelled_distance = 0.0
 
@@ -13,7 +13,7 @@ var _travelled_distance = 0.0
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	global_position = spawnPos
-	#global_rotation = spawnRotation
+	global_rotation = spawnRotation
 
 
 func _physics_process(delta):
