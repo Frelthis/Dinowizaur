@@ -9,5 +9,4 @@ script = ExtResource("1_g1clc")
 
 [node name="cooldown" type="Timer" parent="."]
 unique_name_in_owner = true
-wait_time = 0.05
 one_shot = true

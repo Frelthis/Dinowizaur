@@ -18,13 +18,25 @@ func _process(delta):
 func shoot():
 	var instance = bullet.instantiate()
 	var instance2 = bullet.instantiate()
-	instance.direction = rotation
-	instance2.direction = rotation
+	var instance3 = bullet.instantiate()
+	var instance4 = bullet.instantiate()
+	instance.direction = rotation + (PI/360*8)
+	instance2.direction = rotation - (PI/360*8)
+	instance3.direction = rotation + (PI/360*20)
+	instance4.direction = rotation - (PI/360*20)
 	instance.spawnPos.x = global_position.x +10
 	instance2.spawnPos.x = global_position.x -10
+	instance3.spawnPos.x = global_position.x +20
+	instance4.spawnPos.x = global_position.x -20
 	instance.spawnPos.y = global_position.y -20
 	instance2.spawnPos.y = global_position.y -20
-	instance.spawnRotation = rotation
-	instance2.spawnRotation = rotation
+	instance3.spawnPos.y = global_position.y
+	instance4.spawnPos.y = global_position.y
+	instance.spawnRotation = rotation + (PI/360*8)
+	instance2.spawnRotation = rotation - (PI/360*8)
+	instance3.spawnRotation = rotation + (PI/360*20)
+	instance4.spawnRotation = rotation - (PI/360*20)
 	main.add_child.call_deferred(instance)
 	main.add_child.call_deferred(instance2)
+	main.add_child.call_deferred(instance3)
+	main.add_child.call_deferred(instance4)

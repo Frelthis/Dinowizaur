@@ -4,8 +4,3 @@
 
 [node name="Weapon" type="Sprite2D"]
 script = ExtResource("1_i7r4t")
-
-[node name="cooldown" type="Timer" parent="."]
-unique_name_in_owner = true
-wait_time = 0.05
-one_shot = true
