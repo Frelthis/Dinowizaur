@@ -2,20 +2,22 @@ extends Node2D
 class_name Weapon
 
 @onready var main = get_tree().get_root().get_node("Main")
-@onready var bullet = load("res://Weaponstuff/Bullets/FireBullet.tscn")
+@onready var basicBullet = load("res://Weaponstuff/Bullets/Basic/BasicBullet.tscn")
+@onready var fireBullet = load("res://Weaponstuff/Bullets/Fire/FireBullet.tscn")
+@onready var waterBullet = load("res://Weaponstuff/Bullets/Water/WaterBullet.tscn")
+@onready var bullet = fireBullet
 
-# Called when the node enters the scene tree for the first time.
 func _ready():
 	pass
-#
-#
+
+
 ## Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):
 	#if Input.is_action_pressed("shoot"):
 		#if $cooldown.is_stopped():
 			#shoot()
-#
-#
+
+
 #func shoot():
 	#var instance = bullet.instantiate()
 	#instance.direction = rotation

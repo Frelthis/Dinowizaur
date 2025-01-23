@@ -10,11 +10,12 @@ var max_range := 300.0
 var _travelled_distance = 0.0
 
 
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	global_position = spawnPos
 	global_rotation = spawnRotation
-	direction = PI/360 * randf_range(-10,10)
+	direction = PI/360 * randf_range(-30,30)
 
 
 func _physics_process(delta):

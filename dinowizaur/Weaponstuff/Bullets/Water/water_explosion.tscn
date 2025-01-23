@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://caaksfokmooxr"]
 
-[ext_resource type="Script" path="res://Weaponstuff/Bullets/water_explosion.gd" id="1_1b6ba"]
-[ext_resource type="Texture2D" uid="uid://dja1i38a0l3va" path="res://Weaponstuff/Bullets/bullet.png" id="2_3iogr"]
+[ext_resource type="Script" path="res://Weaponstuff/Bullets/Water/water_explosion.gd" id="1_1b6ba"]
+[ext_resource type="Texture2D" uid="uid://dja1i38a0l3va" path="res://Weaponstuff/Bullets/Basic/bullet.png" id="2_3iogr"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_4veyp"]
 radius = 62.0
