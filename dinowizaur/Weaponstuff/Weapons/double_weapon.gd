@@ -1,7 +1,7 @@
 extends Weapon
 
-@export var firerate: float = .4
-@export var damage: float = 1
+@export var firerate: float = .1
+@export var damage: float = .5
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -28,3 +28,6 @@ func shoot():
 	instance2.spawnRotation = rotation
 	main.add_child.call_deferred(instance)
 	main.add_child.call_deferred(instance2)
+
+func remove():
+	queue_free()

@@ -1,15 +1,14 @@
-[gd_scene load_steps=8 format=3 uid="uid://c6hcjbccs4ja4"]
+[gd_scene load_steps=6 format=3 uid="uid://c6hcjbccs4ja4"]
 
 [ext_resource type="Script" path="res://Player/player.gd" id="1_scof7"]
 [ext_resource type="Texture2D" uid="uid://djarcxdyfwend" path="res://icon.svg" id="2_3f6tr"]
-[ext_resource type="PackedScene" uid="uid://ucnvrhh5my8r" path="res://Weaponstuff/Weapons/weapon.tscn" id="4_1dm7f"]
+[ext_resource type="Script" path="res://States/WeaponStates/PlayerWeaponBaseState.gd" id="4_8xhwk"]
 [ext_resource type="Script" path="res://States/State Machine.gd" id="4_671vh"]
-[ext_resource type="PackedScene" uid="uid://doy2jtox0743o" path="res://Weaponstuff/Weapons/double_weapon.tscn" id="5_0ywh8"]
-[ext_resource type="PackedScene" uid="uid://b57ou3jd8cmpg" path="res://Weaponstuff/Weapons/shotgun.tscn" id="6_vebu7"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_lyjm2"]
 
 [node name="Player" type="CharacterBody2D"]
+collision_mask = 14
 motion_mode = 1
 script = ExtResource("1_scof7")
 
@@ -20,13 +19,9 @@ shape = SubResource("CircleShape2D_lyjm2")
 scale = Vector2(0.208, 0.2)
 texture = ExtResource("2_3f6tr")
 
-[node name="weapon" parent="." instance=ExtResource("4_1dm7f")]
-visible = false
-
-[node name="State Machine" type="Node" parent="."]
+[node name="State Machine" type="Node" parent="." node_paths=PackedStringArray("initial_state")]
 script = ExtResource("4_671vh")
+initial_state = NodePath("BaseWeapon")
 
-[node name="doubleWeapon" parent="." instance=ExtResource("5_0ywh8")]
-visible = false
-
-[node name="shotgun" parent="." instance=ExtResource("6_vebu7")]
+[node name="BaseWeapon" type="Node" parent="State Machine"]
+script = ExtResource("4_8xhwk")

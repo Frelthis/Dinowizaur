@@ -1,5 +1,8 @@
- 
 extends CharacterBody2D
+
+@onready var main = get_tree().get_root().get_node("Main")
+@onready var explosion = load("res://Weaponstuff/Bullets/water_explosion.tscn")
+
 
 @export var Speed = 2000.0
 
@@ -32,4 +35,7 @@ func _physics_process(delta):
 
 
 func _on_area_2d_body_entered(body):
+	var instance = explosion.instantiate()
+	instance.spawnPos = global_position
+	main.add_child.call_deferred(instance)
 	queue_free()

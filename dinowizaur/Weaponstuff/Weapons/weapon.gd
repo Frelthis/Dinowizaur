@@ -2,7 +2,7 @@ extends Node2D
 class_name Weapon
 
 @onready var main = get_tree().get_root().get_node("Main")
-@onready var bullet = load("res://Weaponstuff/Bullets/BasicBullet.tscn")
+@onready var bullet = load("res://Weaponstuff/Bullets/FireBullet.tscn")
 
 # Called when the node enters the scene tree for the first time.
 func _ready():

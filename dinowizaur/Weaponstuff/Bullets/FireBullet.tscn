@@ -1,16 +1,17 @@
-[gd_scene load_steps=4 format=3 uid="uid://cuyj4w6hbonf"]
+[gd_scene load_steps=4 format=3 uid="uid://idtutvw8eev4"]
 
-[ext_resource type="Texture2D" uid="uid://dja1i38a0l3va" path="res://Weaponstuff/Bullets/bullet.png" id="1_7pspy"]
-[ext_resource type="Script" path="res://Weaponstuff/Bullets/basic_bullet.gd" id="1_hocpd"]
+[ext_resource type="Script" path="res://Weaponstuff/Bullets/FireBullet.gd" id="1_seak6"]
+[ext_resource type="Texture2D" uid="uid://dja1i38a0l3va" path="res://Weaponstuff/Bullets/bullet.png" id="2_ghuh4"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_n6cfv"]
-radius = 7.0
-height = 40.0
+radius = 8.0
+height = 42.0
 
-[node name="BasicBullet" type="CharacterBody2D"]
-collision_layer = 16
-collision_mask = 6
-script = ExtResource("1_hocpd")
+[node name="FireBullet" type="CharacterBody2D"]
+collision_layer = 0
+collision_mask = 0
+slide_on_ceiling = false
+script = ExtResource("1_seak6")
 metadata/_edit_horizontal_guides_ = [21.0]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -18,11 +19,11 @@ shape = SubResource("CapsuleShape2D_n6cfv")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(0, 2)
-texture = ExtResource("1_7pspy")
+texture = ExtResource("2_ghuh4")
 
 [node name="Area2D" type="Area2D" parent="."]
 collision_layer = 16
-collision_mask = 6
+collision_mask = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 shape = SubResource("CapsuleShape2D_n6cfv")

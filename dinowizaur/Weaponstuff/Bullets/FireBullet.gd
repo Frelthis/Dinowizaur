@@ -1,12 +1,12 @@
  
 extends CharacterBody2D
 
-@export var Speed = 2000.0
+@export var Speed = 1500.0
 
 var direction: float
 var spawnPos: Vector2
 var spawnRotation: float
-var max_range := 800.0
+var max_range := 300.0
 var _travelled_distance = 0.0
 
 
@@ -14,6 +14,7 @@ var _travelled_distance = 0.0
 func _ready():
 	global_position = spawnPos
 	global_rotation = spawnRotation
+	direction = PI/360 * randf_range(-10,10)
 
 
 func _physics_process(delta):
