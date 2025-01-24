@@ -1,0 +1,39 @@
+[gd_scene load_steps=9 format=3 uid="uid://c6hcjbccs4ja4"]
+
+[ext_resource type="Script" path="res://Player/player.gd" id="1_scof7"]
+[ext_resource type="Texture2D" uid="uid://djarcxdyfwend" path="res://icon.svg" id="2_3f6tr"]
+[ext_resource type="Script" path="res://States/WeaponStates/BasicWeapon.gd" id="4_1wc81"]
+[ext_resource type="Script" path="res://States/State Machine.gd" id="4_671vh"]
+[ext_resource type="Script" path="res://States/WeaponStates/shotgun.gd" id="5_tok3q"]
+[ext_resource type="Script" path="res://States/WeaponStates/double.gd" id="6_dtbme"]
+[ext_resource type="Script" path="res://Weaponstuff/PowerUps/powerup_signals.gd" id="7_cde2i"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_lyjm2"]
+
+[node name="Player" type="CharacterBody2D"]
+collision_mask = 14
+motion_mode = 1
+script = ExtResource("1_scof7")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_lyjm2")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.208, 0.2)
+texture = ExtResource("2_3f6tr")
+
+[node name="State Machine" type="Node" parent="." node_paths=PackedStringArray("initial_state")]
+script = ExtResource("4_671vh")
+initial_state = NodePath("BasicWeapon")
+
+[node name="BasicWeapon" type="Node" parent="State Machine"]
+script = ExtResource("4_1wc81")
+
+[node name="Shotgun" type="Node" parent="State Machine"]
+script = ExtResource("5_tok3q")
+
+[node name="Double" type="Node" parent="State Machine"]
+script = ExtResource("6_dtbme")
+
+[node name="Powerup Signals" type="Node" parent="."]
+script = ExtResource("7_cde2i")

@@ -9,8 +9,8 @@ size = Vector2(36, 20)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_pnt4a"]
 
 [node name="Enemy" type="CharacterBody2D"]
-collision_layer = 2
-collision_mask = 17
+collision_layer = 0
+collision_mask = 0
 script = ExtResource("1_bik03")
 
 [node name="Body" type="Sprite2D" parent="."]
@@ -33,7 +33,8 @@ theme_override_font_sizes/font_size = 13
 text = "100"
 
 [node name="Area2D" type="Area2D" parent="."]
-collision_layer = 0
+collision_layer = 2
+collision_mask = 17
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 shape = SubResource("RectangleShape2D_pnt4a")

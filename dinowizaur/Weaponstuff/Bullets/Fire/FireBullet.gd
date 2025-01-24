@@ -8,7 +8,7 @@ var spawnPos: Vector2
 var spawnRotation: float
 var max_range := 300.0
 var _travelled_distance = 0.0
-
+var bullet = load("res://Weaponstuff/Bullets/Fire/FireBullet.tscn")
 
 
 # Called when the node enters the scene tree for the first time.

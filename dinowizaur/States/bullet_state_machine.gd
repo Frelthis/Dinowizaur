@@ -1,9 +1,9 @@
 extends Node
-class_name Weapon_State_Machine
+class_name Bullet_State_Machine
 
 @export var initial_state: State
 
-var current_state: State
+@export var current_state: State
 var states: Dictionary = {}
 
 
@@ -18,7 +18,7 @@ func _ready():
 		current_state = initial_state
 	
 	var power = get_tree().get_root().get_node("Main/Player/PowerupSignals")
-	power.Weapon_Pickedup.connect(_pickedup)
+	power.Bullet_Pickedup.connect(_pickedup)
 
 
 func _process(delta):
@@ -32,25 +32,28 @@ func _physics_process(delta):
 
 
 func on_child_transition(state, new_state_name):
+	print(1)
 	if state != current_state:
+		print(2)
 		return
 	
 	var new_state = states.get(new_state_name.to_lower())
 	if !new_state:
+		print(3)
 		return
 	
 	if current_state:
+		print(4)
 		current_state.Exit()
-	
 	new_state.Enter()
 	
 	current_state = new_state
 
 
 func _pickedup(new_change: String):
-	print("changing weapon")
+	print("changing bullet")
 	var new_state = states.get(new_change.to_lower())
 	if !new_state:
-		print("bad weapon state")
+		print("bad bullet state")
 		return
 	on_child_transition(current_state,new_change)

@@ -1,7 +1,7 @@
 extends CharacterBody2D
 
 @onready var main = get_tree().get_root().get_node("Main")
-@onready var explosion = load("res://Weaponstuff/Bullets/water_explosion.tscn")
+@onready var explosion = load("res://Weaponstuff/Bullets/Water/water_explosion.tscn")
 
 
 @export var Speed = 2000.0

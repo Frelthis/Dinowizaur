@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://iors0w1p5qbs"]
 
-[ext_resource type="Script" path="res://Weaponstuff/power_up.gd" id="1_pss6d"]
-[ext_resource type="Texture2D" uid="uid://djarcxdyfwend" path="res://icon.svg" id="2_tnspo"]
+[ext_resource type="Script" path="res://Weaponstuff/PowerUps/power_up.gd" id="1_pss6d"]
+[ext_resource type="Texture2D" uid="uid://sr0hn2m7h18b" path="res://Weaponstuff/Weapons/double.png" id="2_0atfw"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kgj8f"]
 
@@ -15,7 +15,7 @@ script = ExtResource("1_pss6d")
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(1.90735e-06, -1.90735e-06)
 scale = Vector2(0.15625, 0.15625)
-texture = ExtResource("2_tnspo")
+texture = ExtResource("2_0atfw")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_kgj8f")

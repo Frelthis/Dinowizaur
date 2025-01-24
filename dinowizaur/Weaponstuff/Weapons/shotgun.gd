@@ -3,12 +3,13 @@ extends Weapon
 @export var firerate: float = .4
 @export var damage: float = 1
 
-# Called when the node enters the scene tree for the first time.
+
 func _ready():
-	pass # Replace with function body.
+	var loading = main.find_child("Bullet State Machine")
+	bullet = loading.current_state.bullet
+	pass 
 
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	if Input.is_action_pressed("shoot"):
 		if %cooldown.is_stopped():

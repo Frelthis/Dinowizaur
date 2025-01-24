@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://c6hcjbccs4ja4" path="res://Player/player.tscn" id="1_ws7g4"]
 [ext_resource type="Texture2D" uid="uid://djarcxdyfwend" path="res://icon.svg" id="2_kg0py"]
-[ext_resource type="PackedScene" uid="uid://iors0w1p5qbs" path="res://Weaponstuff/PowerUps/power_up.tscn" id="3_fethe"]
+[ext_resource type="PackedScene" uid="uid://iors0w1p5qbs" path="res://Weaponstuff/power_up.tscn" id="3_fethe"]
 [ext_resource type="PackedScene" uid="uid://2wpju5785y7k" path="res://Enemy/enemy.tscn" id="3_ojvci"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_cjhiy"]

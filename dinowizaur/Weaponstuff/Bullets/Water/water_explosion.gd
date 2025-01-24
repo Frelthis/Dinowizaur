@@ -1,4 +1,4 @@
-extends "res://Weaponstuff/Bullets/basic_bullet.gd"
+extends "res://Weaponstuff/Bullets/Basic/basic_bullet.gd"
 
 func _physics_process(delta):
 	velocity = Vector2(0, -Speed).rotated(direction)
