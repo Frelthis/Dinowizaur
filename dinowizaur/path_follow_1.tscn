@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://dqdt2apxlugge"]
+
+[ext_resource type="Script" path="res://Enemy/PathSwoop.gd" id="1_t7ey2"]
+[ext_resource type="PackedScene" uid="uid://2wpju5785y7k" path="res://Enemy/enemy.tscn" id="2_b1dpd"]
+
+[node name="PathFollow2D" type="PathFollow2D"]
+position = Vector2(27, 20)
+rotates = false
+cubic_interp = false
+loop = false
+script = ExtResource("1_t7ey2")
+
+[node name="Enemy" parent="." instance=ExtResource("2_b1dpd")]
+unique_name_in_owner = true

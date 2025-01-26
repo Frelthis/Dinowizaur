@@ -2,7 +2,7 @@ extends CharacterBody2D
 
 var health
 
-const SPEED = 300.0
+@export var SPEED = 300.0
 
 
 func _physics_process(delta):
