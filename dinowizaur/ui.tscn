@@ -1,0 +1,148 @@
+[gd_scene load_steps=3 format=3 uid="uid://be2tr1p56b0wy"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_ml146"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_iaj13"]
+
+[node name="UI" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Walls" type="Node" parent="."]
+
+[node name="Left Wall" type="Node2D" parent="Walls"]
+
+[node name="LeftUI wall" type="StaticBody2D" parent="Walls/Left Wall"]
+disable_mode = 2
+collision_layer = 4
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/Left Wall/LeftUI wall"]
+position = Vector2(150, 0)
+rotation = 1.5708
+shape = SubResource("WorldBoundaryShape2D_ml146")
+
+[node name="ColorRect" type="ColorRect" parent="Walls/Left Wall/LeftUI wall"]
+offset_top = -57.0
+offset_right = 150.0
+offset_bottom = 692.0
+size_flags_horizontal = 2
+size_flags_vertical = 3
+color = Color(0, 0.156863, 0, 1)
+
+[node name="Left Bullet wall" type="StaticBody2D" parent="Walls/Left Wall"]
+collision_layer = 8
+collision_mask = 0
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Walls/Left Wall/Left Bullet wall"]
+position = Vector2(140, 0)
+rotation = 1.5708
+shape = SubResource("WorldBoundaryShape2D_iaj13")
+
+[node name="Right Wall" type="Node2D" parent="Walls"]
+position = Vector2(1152, 648)
+rotation = 3.14159
+
+[node name="Right Bullet wall" type="StaticBody2D" parent="Walls/Right Wall"]
+collision_layer = 8
+collision_mask = 0
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Walls/Right Wall/Right Bullet wall"]
+position = Vector2(140, 0)
+rotation = 1.5708
+shape = SubResource("WorldBoundaryShape2D_iaj13")
+
+[node name="RightUI wall" type="StaticBody2D" parent="Walls/Right Wall"]
+disable_mode = 2
+collision_layer = 4
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/Right Wall/RightUI wall"]
+position = Vector2(150, 0)
+rotation = 1.5708
+shape = SubResource("WorldBoundaryShape2D_ml146")
+
+[node name="ColorRect" type="ColorRect" parent="Walls/Right Wall/RightUI wall"]
+offset_right = 150.0
+offset_bottom = 749.0
+size_flags_horizontal = 2
+size_flags_vertical = 3
+color = Color(0, 0.156863, 0, 1)
+
+[node name="top wall" type="StaticBody2D" parent="Walls"]
+visible = false
+position = Vector2(881, 96)
+rotation = 1.5708
+disable_mode = 2
+collision_layer = 4
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/top wall"]
+position = Vector2(150, 0)
+rotation = 1.5708
+shape = SubResource("WorldBoundaryShape2D_ml146")
+
+[node name="ColorRect" type="ColorRect" parent="Walls/top wall"]
+visible = false
+offset_top = -401.0
+offset_right = 150.0
+offset_bottom = 990.0
+size_flags_horizontal = 2
+size_flags_vertical = 3
+color = Color(0, 0.156863, 0, 1)
+
+[node name="bottom wall" type="StaticBody2D" parent="Walls"]
+visible = false
+position = Vector2(272, 778)
+rotation = -1.5708
+disable_mode = 2
+collision_layer = 4
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/bottom wall"]
+position = Vector2(150, 0)
+rotation = 1.5708
+shape = SubResource("WorldBoundaryShape2D_ml146")
+
+[node name="ColorRect" type="ColorRect" parent="Walls/bottom wall"]
+offset_top = -377.0
+offset_right = 150.0
+offset_bottom = 943.0
+size_flags_horizontal = 2
+size_flags_vertical = 3
+color = Color(0, 0.156863, 0, 1)
+
+[node name="Lives" type="Label" parent="."]
+top_level = true
+layout_mode = 0
+offset_right = 44.0
+offset_bottom = 23.0
+text = "Lives:"
+
+[node name="Score" type="Label" parent="."]
+top_level = true
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -48.0
+offset_bottom = 23.0
+grow_horizontal = 0
+text = "Score:"
+
+[node name="WeaponEnhancement" type="Label" parent="."]
+top_level = true
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -23.0
+offset_right = 40.0
+grow_vertical = 0
+text = "Base Weapon
+No element
+"

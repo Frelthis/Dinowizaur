@@ -1,18 +1,23 @@
-[gd_scene load_steps=6 format=3 uid="uid://dycjj058m5kqm"]
+[gd_scene load_steps=8 format=3 uid="uid://dycjj058m5kqm"]
 
 [ext_resource type="PackedScene" uid="uid://c6hcjbccs4ja4" path="res://Player/player.tscn" id="1_ws7g4"]
 [ext_resource type="Texture2D" uid="uid://djarcxdyfwend" path="res://icon.svg" id="2_kg0py"]
 [ext_resource type="PackedScene" uid="uid://iors0w1p5qbs" path="res://Weaponstuff/PowerUps/power_up.tscn" id="3_fethe"]
 [ext_resource type="PackedScene" uid="uid://2wpju5785y7k" path="res://Enemy/enemy.tscn" id="3_ojvci"]
+[ext_resource type="PackedScene" uid="uid://be2tr1p56b0wy" path="res://ui.tscn" id="5_nu338"]
+[ext_resource type="PackedScene" uid="uid://bvs4kwdwv1wxl" path="res://Enemy/EnemyPath1.tscn" id="6_dfmyq"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_cjhiy"]
 size = Vector2(213, 20)
 
 [node name="Main" type="Node"]
 
+[node name="Player" parent="." instance=ExtResource("1_ws7g4")]
+position = Vector2(568, 577)
+
 [node name="Area2D" type="StaticBody2D" parent="."]
 position = Vector2(570, 326)
-collision_layer = 4
+collision_layer = 12
 collision_mask = 16
 
 [node name="Sprite2D" type="Sprite2D" parent="Area2D"]
@@ -24,11 +29,14 @@ texture = ExtResource("2_kg0py")
 position = Vector2(-0.5, 0)
 shape = SubResource("RectangleShape2D_cjhiy")
 
-[node name="Player" parent="." instance=ExtResource("1_ws7g4")]
-position = Vector2(568, 577)
-
 [node name="Enemy" parent="." instance=ExtResource("3_ojvci")]
 position = Vector2(649, 145)
 
 [node name="PowerUp" parent="." instance=ExtResource("3_fethe")]
 position = Vector2(444, 125)
+
+[node name="enemy paths" type="Node" parent="."]
+
+[node name="UI" parent="." instance=ExtResource("5_nu338")]
+
+[node name="Path2D" parent="." instance=ExtResource("6_dfmyq")]

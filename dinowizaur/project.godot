@@ -44,6 +44,7 @@ move_down={
 shoot={
 "deadzone": 0.5,
 "events": [Object(InputEventJoypadMotion,"resource_local_to_scene":false,"resource_name":"","device":-1,"axis":5,"axis_value":1.0,"script":null)
+, Object(InputEventJoypadButton,"resource_local_to_scene":false,"resource_name":"","device":-1,"button_index":0,"pressure":0.0,"pressed":true,"script":null)
 ]
 }
 bomb={
@@ -65,9 +66,15 @@ compatibility/legacy_just_pressed_behavior=true
 
 2d_physics/layer_1="Player Model"
 2d_physics/layer_2="Enemy Model"
-2d_physics/layer_3="Walls"
+2d_physics/layer_3="Player Walls"
+2d_physics/layer_4="Bullet Walls"
 2d_physics/layer_5="Player Bullet"
+2d_physics/layer_6="Enemy Bullet"
 
 [physics]
 
 2d/physics_engine="GodotPhysics2D"
+
+[rendering]
+
+renderer/rendering_method="mobile"
