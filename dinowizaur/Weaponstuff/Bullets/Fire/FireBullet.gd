@@ -8,10 +8,9 @@ var spawnPos: Vector2
 var spawnRotation: float
 var max_range := 300.0
 var _travelled_distance = 0.0
-var bullet = load("res://Weaponstuff/Bullets/Fire/FireBullet.tscn")
+var damage = 1
 
 
-# Called when the node enters the scene tree for the first time.
 func _ready():
 	global_position = spawnPos
 	global_rotation = spawnRotation
@@ -27,11 +26,15 @@ func _physics_process(delta):
 	
 	_travelled_distance += distance
 	if _travelled_distance > max_range:
-		#hide()
-		#set_process(false)
 		queue_free()
-		pass
 
 
 func _on_area_2d_body_entered(body):
 	queue_free()
+
+func _on_area_2d_area_entered(area):
+	queue_free()
+
+
+func get_damage_amount() -> int:
+	return damage

@@ -1,11 +1,9 @@
 extends Path2D
 
-@onready var path = get_tree().get_root().get_node("Main/EnemyPath")
 var enemy = preload("res://path_follow_1.tscn")
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	path = get_tree().get_root().get_node("Main/EnemyPath")
 	pass # Replace with function body.
 
 

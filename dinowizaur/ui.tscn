@@ -1,4 +1,6 @@
-[gd_scene load_steps=3 format=3 uid="uid://be2tr1p56b0wy"]
+[gd_scene load_steps=4 format=3 uid="uid://be2tr1p56b0wy"]
+
+[ext_resource type="Script" path="res://score.gd" id="1_4lrxc"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_ml146"]
 
@@ -133,6 +135,7 @@ offset_left = -48.0
 offset_bottom = 23.0
 grow_horizontal = 0
 text = "Score:"
+script = ExtResource("1_4lrxc")
 
 [node name="WeaponEnhancement" type="Label" parent="."]
 top_level = true

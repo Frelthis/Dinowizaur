@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://c6hcjbccs4ja4"]
+[gd_scene load_steps=14 format=3 uid="uid://c6hcjbccs4ja4"]
 
 [ext_resource type="Script" path="res://Player/player.gd" id="1_scof7"]
 [ext_resource type="Texture2D" uid="uid://djarcxdyfwend" path="res://icon.svg" id="2_3f6tr"]
@@ -13,6 +13,9 @@
 [ext_resource type="Script" path="res://States/WeaponStates/water.gd" id="10_ko6jp"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_lyjm2"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dq64e"]
+size = Vector2(36, 20)
 
 [node name="Player" type="CharacterBody2D"]
 collision_mask = 14
@@ -57,3 +60,12 @@ script = ExtResource("10_ko6jp")
 [node name="PowerupSignals" type="Node" parent="."]
 unique_name_in_owner = true
 script = ExtResource("7_cde2i")
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_mask = 42
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("RectangleShape2D_dq64e")
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

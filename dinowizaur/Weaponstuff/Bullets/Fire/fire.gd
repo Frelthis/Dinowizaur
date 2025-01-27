@@ -6,7 +6,6 @@ class_name FireBullet
 var instance
 
 func Enter():
-	
 	pass
 
 

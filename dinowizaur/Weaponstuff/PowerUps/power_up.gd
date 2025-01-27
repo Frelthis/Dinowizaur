@@ -11,25 +11,17 @@ func _ready():
 	element_change = get_tree().get_root().get_node("Main/Player/Bullet State Machine").current_state.name
 	weapon_change = get_tree().get_root().get_node("Main/Player/Weapon State Machine").current_state.name
 	if randi() %2:
-		weapon = randi() %3
+		weapon = randi() %2
 	else:
-		element = randi() %4
+		element = randi() %2
 	if element == 0:
-		element_change = "basic"
-	elif element == 1:
 		element_change = "fire"
-	elif element == 2:
+	elif element == 1:
 		element_change = "water"
-	elif element == 3:
-		element_change = "lightning"
 	if weapon == 0:
-		weapon_change = "basicweapon"
+		weapon_change = "shotgun"
 	elif weapon == 1:
 		weapon_change = "double"
-	elif weapon == 2:
-		weapon_change = "shotgun"
-	
-	
 
 
 func _physics_process(delta):
