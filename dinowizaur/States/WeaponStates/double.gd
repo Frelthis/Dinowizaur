@@ -12,6 +12,7 @@ func Enter():
 
 func Exit():
 	main.remove_child(instance)
+	instance.queue_free()
 
 
 func Update(_delta: float):

@@ -22,13 +22,12 @@ func _ready():
 
 
 func _process(delta):
-	if current_state:
-		current_state.Update(delta)
+
+	current_state.Update(delta)
 
 
 func _physics_process(delta):
-	if current_state:
-		current_state.Physics_Update(delta)
+	current_state.Physics_Update(delta)
 
 
 func on_child_transition(state, new_state_name):
@@ -48,9 +47,10 @@ func on_child_transition(state, new_state_name):
 
 
 func _pickedup(new_change: String):
-	print("changing weapon")
 	var new_state = states.get(new_change.to_lower())
 	if !new_state:
 		print("bad weapon state")
 		return
 	on_child_transition(current_state,new_change)
+	var ui: Label = get_tree().get_root().get_node("Main").find_child("WeaponEnhancement")
+	ui.text = "%s" % current_state.name

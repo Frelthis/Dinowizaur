@@ -1,8 +1,8 @@
 extends State
-class_name ShotgunWeapon
+class_name SpreadWeapon
 
 @onready var main = get_tree().get_root().get_node("Main/Player")
-@onready var weapon = load("res://Weaponstuff/Weapons/shotgun.tscn")
+@onready var weapon = load("res://Weaponstuff/Weapons/spread.tscn")
 var instance
 
 func Enter():
@@ -12,6 +12,7 @@ func Enter():
 
 func Exit():
 	main.remove_child(instance)
+	instance.queue_free()
 
 
 func Update(_delta: float):

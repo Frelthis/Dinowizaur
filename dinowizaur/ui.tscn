@@ -123,7 +123,7 @@ top_level = true
 layout_mode = 0
 offset_right = 44.0
 offset_bottom = 23.0
-text = "Lives:"
+text = "Lives: 3"
 
 [node name="Score" type="Label" parent="."]
 top_level = true
@@ -134,18 +134,27 @@ anchor_right = 1.0
 offset_left = -48.0
 offset_bottom = 23.0
 grow_horizontal = 0
-text = "Score:"
+text = "Score: 000000"
 script = ExtResource("1_4lrxc")
+
+[node name="WeaponElement" type="Label" parent="."]
+top_level = true
+layout_mode = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -49.0
+offset_right = 105.0
+grow_vertical = 0
+text = "No element"
+vertical_alignment = 2
 
 [node name="WeaponEnhancement" type="Label" parent="."]
 top_level = true
-layout_mode = 1
-anchors_preset = 2
+layout_mode = 2
 anchor_top = 1.0
 anchor_bottom = 1.0
-offset_top = -23.0
-offset_right = 40.0
+offset_top = -49.0
+offset_right = 105.0
 grow_vertical = 0
-text = "Base Weapon
-No element
-"
+size_flags_vertical = 10
+text = "Base Weapon"

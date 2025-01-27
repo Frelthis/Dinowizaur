@@ -1,5 +1,5 @@
 extends State
-class_name BasicBullet
+class_name BaseBullet
 
 @onready var main = get_tree().get_root().get_node("Main/Player")
 @onready var bullet = load("res://Weaponstuff/Bullets/Basic/BasicBullet.tscn")

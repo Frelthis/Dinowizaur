@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://djarcxdyfwend" path="res://icon.svg" id="2_3f6tr"]
 [ext_resource type="Script" path="res://States/WeaponStates/BasicWeapon.gd" id="4_1wc81"]
 [ext_resource type="Script" path="res://States/State Machine.gd" id="4_671vh"]
-[ext_resource type="Script" path="res://States/WeaponStates/shotgun.gd" id="5_tok3q"]
+[ext_resource type="Script" path="res://Player/spread_shot.gd" id="5_wn5gs"]
 [ext_resource type="Script" path="res://States/WeaponStates/double.gd" id="6_dtbme"]
 [ext_resource type="Script" path="res://Weaponstuff/PowerUps/powerup_signals.gd" id="7_cde2i"]
 [ext_resource type="Script" path="res://States/bullet_state_machine.gd" id="7_m3qdm"]
@@ -31,28 +31,28 @@ texture = ExtResource("2_3f6tr")
 
 [node name="Weapon State Machine" type="Node" parent="." node_paths=PackedStringArray("initial_state")]
 script = ExtResource("4_671vh")
-initial_state = NodePath("BasicWeapon")
+initial_state = NodePath("Base Weapon")
 
-[node name="BasicWeapon" type="Node" parent="Weapon State Machine"]
+[node name="Base Weapon" type="Node" parent="Weapon State Machine"]
 script = ExtResource("4_1wc81")
 
-[node name="Shotgun" type="Node" parent="Weapon State Machine"]
-script = ExtResource("5_tok3q")
+[node name="Spread Shot" type="Node" parent="Weapon State Machine"]
+script = ExtResource("5_wn5gs")
 
-[node name="Double" type="Node" parent="Weapon State Machine"]
+[node name="Double Shooter" type="Node" parent="Weapon State Machine"]
 script = ExtResource("6_dtbme")
 
 [node name="Bullet State Machine" type="Node" parent="." node_paths=PackedStringArray("initial_state")]
 script = ExtResource("7_m3qdm")
-initial_state = NodePath("Basic")
+initial_state = NodePath("Base Bullet")
 
-[node name="Basic" type="Node" parent="Bullet State Machine"]
+[node name="Base Bullet" type="Node" parent="Bullet State Machine"]
 script = ExtResource("8_75nxh")
 
-[node name="Fire" type="Node" parent="Bullet State Machine"]
+[node name="Fire Bullet" type="Node" parent="Bullet State Machine"]
 script = ExtResource("8_hxn8k")
 
-[node name="Water" type="Node" parent="Bullet State Machine"]
+[node name="Water Bullet" type="Node" parent="Bullet State Machine"]
 script = ExtResource("10_ko6jp")
 
 [node name="Lightning" type="Node" parent="Bullet State Machine"]

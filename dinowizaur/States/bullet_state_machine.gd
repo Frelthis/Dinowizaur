@@ -32,18 +32,17 @@ func _physics_process(delta):
 
 
 func on_child_transition(state, new_state_name):
-	print(1)
 	if state != current_state:
-		print(2)
+		print("bullet bad state")
 		return
 	
 	var new_state = states.get(new_state_name.to_lower())
 	if !new_state:
-		print(3)
+		print("bullet not new")
 		return
 	
 	if current_state:
-		print(4)
+		print("exit current bullet")
 		current_state.Exit()
 	new_state.Enter()
 	
@@ -51,9 +50,10 @@ func on_child_transition(state, new_state_name):
 
 
 func _pickedup(new_change: String):
-	print("changing bullet")
 	var new_state = states.get(new_change.to_lower())
 	if !new_state:
 		print("bad bullet state")
 		return
 	on_child_transition(current_state,new_change)
+	var ui: Label = get_tree().get_root().get_node("Main").find_child("WeaponElement")
+	ui.text = "%s" % current_state.name
