@@ -25,6 +25,8 @@ func _on_area_2d_area_entered(area: Area2D):
 		health -= node.damage
 		var ui: Label = get_tree().get_root().get_node("Main").find_child("Lives")
 		ui.text = "Lives: %s" % health
+		if health <= 0:
+			get_tree().change_scene_to_file("res://start_menu.tscn")
 
 
 func _on_area_2d_body_entered(body):
@@ -33,3 +35,5 @@ func _on_area_2d_body_entered(body):
 		health -= node.damage
 		var ui: Label = get_tree().get_root().get_node("Main").find_child("Lives")
 		ui.text = "Lives: %s" % health
+		if health <= 0:
+			get_tree().change_scene_to_file("res://start_menu.tscn")

@@ -36,7 +36,7 @@ func _on_area_2d_area_entered(area: Area2D):
 func aim_and_shoot():
 	var NewBullet = enemyBullet.instantiate()
 	NewBullet.global_position = global_position
-	#velocity and direction
+	NewBullet.looking_at()
 	get_parent().add_child(NewBullet)
 
 func get_damage_amount() -> int:
