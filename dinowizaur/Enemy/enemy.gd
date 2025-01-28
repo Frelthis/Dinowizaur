@@ -10,26 +10,27 @@ func _physics_process(delta):
 	pass
 
 func _on_area_2d_body_entered(body: Node2D):
-	if body.get_parent().has_method("get_damage_amount"):
-		var node = body.get_parent() as Node2D
-		health -= node.damage
-	if health <= 0:
-		var ui: Label = get_tree().get_root().get_node("Main").find_child("Score")
-		ui.score += 100
-		ui.text = "Score: %s" % ui.score
-		drop_power_up()
+	#if body.get_parent().has_method("get_damage_amount"):
+		#var node = body.get_parent() as Node2D
+		#health -= node.damage
+	#if health <= 0:
+		#var ui: Label = get_tree().get_root().get_node("Main").find_child("Score")
+		#ui.score += 100
+		#ui.text = "Score: %s" % ui.score
+		#if randi() % 10:
+			#drop_power_up()
 		queue_free()
 
 
 func _on_area_2d_area_entered(area: Area2D):
 	if area.get_parent().has_method("get_damage_amount"):
-		var node = area.get_parent() as Node
-		health -= node.damage
+		health -= area.get_parent().damage
 	if health <= 0:
-		var ui: Label = get_tree().get_root().get_node("Main").find_child("Score")
-		ui.score += 100
-		ui.text = "Score: %s" % ui.score
-		drop_power_up()
+		score()
+		if randi_range(0,10) == 1:
+			if get_tree().get_root().get_node("Main").find_child("PowerUpTimer").is_stopped():
+				get_tree().get_root().get_node("Main").find_child("PowerUpTimer").start()
+				drop_power_up()
 		queue_free()
 
 func aim_and_shoot():
@@ -46,4 +47,8 @@ func drop_power_up():
 	Pu.spawnPos.x = global_position.x
 	Pu.spawnPos.y = global_position.y
 	get_tree().get_root().get_node("Main").add_child.call_deferred(Pu)
-	pass
+
+func score():
+	var ui: Label = get_tree().get_root().get_node("Main").find_child("Score")
+	ui.score += 100
+	ui.text = "Score: %s" % ui.score

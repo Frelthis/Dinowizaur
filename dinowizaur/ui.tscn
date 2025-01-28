@@ -37,6 +37,7 @@ size_flags_vertical = 3
 color = Color(0, 0.156863, 0, 1)
 
 [node name="Left Bullet wall" type="StaticBody2D" parent="Walls/Left Wall"]
+position = Vector2(15, 0)
 collision_layer = 8
 collision_mask = 0
 
@@ -48,15 +49,6 @@ shape = SubResource("WorldBoundaryShape2D_iaj13")
 [node name="Right Wall" type="Node2D" parent="Walls"]
 position = Vector2(1152, 648)
 rotation = 3.14159
-
-[node name="Right Bullet wall" type="StaticBody2D" parent="Walls/Right Wall"]
-collision_layer = 8
-collision_mask = 0
-
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="Walls/Right Wall/Right Bullet wall"]
-position = Vector2(140, 0)
-rotation = 1.5708
-shape = SubResource("WorldBoundaryShape2D_iaj13")
 
 [node name="RightUI wall" type="StaticBody2D" parent="Walls/Right Wall"]
 disable_mode = 2
@@ -74,6 +66,16 @@ offset_bottom = 749.0
 size_flags_horizontal = 2
 size_flags_vertical = 3
 color = Color(0, 0.156863, 0, 1)
+
+[node name="Right Bullet wall" type="StaticBody2D" parent="Walls/Right Wall"]
+position = Vector2(15, 6.10352e-05)
+collision_layer = 8
+collision_mask = 0
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Walls/Right Wall/Right Bullet wall"]
+position = Vector2(140, 0)
+rotation = 1.5708
+shape = SubResource("WorldBoundaryShape2D_iaj13")
 
 [node name="top wall" type="StaticBody2D" parent="Walls"]
 visible = false

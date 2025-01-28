@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dlgebuivwc4wa"
-path="res://.godot/imported/double.png-7df2a551f198af2bde241cebea39b90d.ctex"
+uid="uid://sr0hn2m7h18b"
+path="res://.godot/imported/double.png-07ca57ced9147541c5afc5b2107f1c6a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Weaponstuff/Bullets/Fire/double.png"
-dest_files=["res://.godot/imported/double.png-7df2a551f198af2bde241cebea39b90d.ctex"]
+source_file="res://Weaponstuff/Bullets/Water/double.png"
+dest_files=["res://.godot/imported/double.png-07ca57ced9147541c5afc5b2107f1c6a.ctex"]
 
 [params]
 

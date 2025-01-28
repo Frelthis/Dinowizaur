@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://sr0hn2m7h18b"
-path="res://.godot/imported/double.png-143a8d7ea3a5d96f6963d0a916a048c3.ctex"
+uid="uid://bxapl18mxuoe7"
+path="res://.godot/imported/spread.png-bde7deae1d0c512980ef94f990db79d6.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Weaponstuff/Weapons/double.png"
-dest_files=["res://.godot/imported/double.png-143a8d7ea3a5d96f6963d0a916a048c3.ctex"]
+source_file="res://Weaponstuff/Weapons/spread.png"
+dest_files=["res://.godot/imported/spread.png-bde7deae1d0c512980ef94f990db79d6.ctex"]
 
 [params]
 

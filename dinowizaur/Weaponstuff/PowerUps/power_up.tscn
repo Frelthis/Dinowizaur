@@ -1,7 +1,6 @@
-[gd_scene load_steps=5 format=3 uid="uid://iors0w1p5qbs"]
+[gd_scene load_steps=4 format=3 uid="uid://iors0w1p5qbs"]
 
 [ext_resource type="Script" path="res://Weaponstuff/PowerUps/power_up.gd" id="1_pss6d"]
-[ext_resource type="Texture2D" uid="uid://sr0hn2m7h18b" path="res://Weaponstuff/Weapons/double.png" id="2_0atfw"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kgj8f"]
 
@@ -12,10 +11,9 @@ collision_layer = 0
 collision_mask = 0
 script = ExtResource("1_pss6d")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="PowerUpSprite" type="Sprite2D" parent="."]
 position = Vector2(1.90735e-06, -1.90735e-06)
 scale = Vector2(0.15625, 0.15625)
-texture = ExtResource("2_0atfw")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 visible = false
@@ -30,6 +28,7 @@ shape = SubResource("RectangleShape2D_amqjc")
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 10.0
+one_shot = true
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

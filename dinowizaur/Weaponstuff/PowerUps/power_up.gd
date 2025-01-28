@@ -9,6 +9,7 @@ var spawnPos: Vector2
 
 
 func _ready():
+	$Timer.start()
 	global_position = spawnPos
 	element_change = get_tree().get_root().get_node("Main").find_child("Bullet State Machine").current_state.name
 	weapon_change = get_tree().get_root().get_node("Main").find_child("Weapon State Machine").current_state.name
@@ -18,12 +19,16 @@ func _ready():
 		element = randi() %2
 	if element == 0:
 		element_change = "fire bullet"
+		$PowerUpSprite.texture = load("res://Weaponstuff/Bullets/Fire/firehat.png")
 	elif element == 1:
 		element_change = "water bullet"
-	if weapon == 0:
+		$PowerUpSprite.texture = load("res://Weaponstuff/Bullets/Water/double.png")
+	elif weapon == 0:
 		weapon_change = "spread shot"
+		$PowerUpSprite.texture = load("res://Weaponstuff/Weapons/spread.png")
 	elif weapon == 1:
 		weapon_change = "double shooter"
+		$PowerUpSprite.texture = load("res://Weaponstuff/Weapons/doubleshot.png")
 
 
 func _physics_process(delta):
@@ -41,4 +46,5 @@ func _on_area_2d_body_entered(body):
 
 
 func _on_timer_timeout():
+	$Timer.stop()
 	queue_free()
