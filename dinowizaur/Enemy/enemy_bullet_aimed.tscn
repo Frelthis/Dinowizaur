@@ -1,16 +1,16 @@
-[gd_scene load_steps=4 format=3 uid="uid://dckra4obce2iy"]
+[gd_scene load_steps=4 format=3 uid="uid://ltgibyttvt5s"]
 
-[ext_resource type="Script" path="res://Enemy/enemy_bullet.gd" id="1_khf3h"]
-[ext_resource type="Texture2D" uid="uid://b1ke6x7q6ldx3" path="res://Enemy/enemybullet.png" id="2_5mtgr"]
+[ext_resource type="Script" path="res://Enemy/enemy_bullet_aimed.gd" id="1_rm4bq"]
+[ext_resource type="Texture2D" uid="uid://b1ke6x7q6ldx3" path="res://Enemy/enemybullet.png" id="2_l65fb"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_n6cfv"]
 radius = 1.0
 height = 12.0
 
-[node name="EnemyBullet" type="CharacterBody2D"]
+[node name="EnemyBulletAimed" type="CharacterBody2D" groups=["player"]]
 collision_layer = 0
 collision_mask = 0
-script = ExtResource("1_khf3h")
+script = ExtResource("1_rm4bq")
 metadata/_edit_horizontal_guides_ = [21.0]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -20,7 +20,7 @@ shape = SubResource("CapsuleShape2D_n6cfv")
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(0, 2)
 scale = Vector2(1, 1.27273)
-texture = ExtResource("2_5mtgr")
+texture = ExtResource("2_l65fb")
 
 [node name="hitbox" type="Area2D" parent="."]
 collision_layer = 32
@@ -30,4 +30,9 @@ collision_mask = 9
 position = Vector2(0, 2)
 shape = SubResource("CapsuleShape2D_n6cfv")
 
+[node name="Life" type="Timer" parent="."]
+one_shot = true
+autostart = true
+
 [connection signal="body_entered" from="hitbox" to="." method="_on_area_2d_body_entered"]
+[connection signal="timeout" from="Life" to="." method="_on_life_timeout"]

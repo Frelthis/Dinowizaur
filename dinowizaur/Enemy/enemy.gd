@@ -1,13 +1,19 @@
 extends CharacterBody2D
+class_name Enemy
 
+@onready var main = get_tree().get_root().get_node("Main")
+@onready var player = get_tree().get_nodes_in_group("player")[0]
 @export var health = 2
-@export var SPEED = 300.0
-var enemyBullet = preload("res://Enemy/EnemyBullet.tscn")
+var SPEED = 300.0
+var enemyBullet = preload("res://Enemy/EnemyBulletDown.tscn")
+var enemyBulletAimed = preload("res://Enemy/enemy_bullet_aimed.tscn")
 var powerup = preload("res://Weaponstuff/PowerUps/power_up.tscn")
 var damage = 1
+var fireRate = 1.5 #seconds
 
 func _physics_process(delta):
 	pass
+
 
 func _on_area_2d_body_entered(body: Node2D):
 	#if body.get_parent().has_method("get_damage_amount"):
@@ -21,7 +27,6 @@ func _on_area_2d_body_entered(body: Node2D):
 			#drop_power_up()
 		queue_free()
 
-
 func _on_area_2d_area_entered(area: Area2D):
 	if area.get_parent().has_method("get_damage_amount"):
 		health -= area.get_parent().damage
@@ -33,11 +38,6 @@ func _on_area_2d_area_entered(area: Area2D):
 				drop_power_up()
 		queue_free()
 
-func aim_and_shoot():
-	var NewBullet = enemyBullet.instantiate()
-	NewBullet.global_position = global_position
-	NewBullet.looking_at()
-	get_parent().add_child(NewBullet)
 
 func get_damage_amount() -> int:
 	return damage
@@ -52,3 +52,19 @@ func score():
 	var ui: Label = get_tree().get_root().get_node("Main").find_child("Score")
 	ui.score += 100
 	ui.text = "Score: %s" % ui.score
+
+#this should be overwritten by super when creating an enemy type
+func _on_fire_rate_timeout():
+	#shoot_down()
+	aim_and_shoot()
+	$FireRate.start(fireRate)
+
+func shoot_down():
+	var NewBullet = enemyBullet.instantiate()
+	NewBullet.spawnPos = global_position
+	main.add_child.call_deferred(NewBullet)
+
+func aim_and_shoot():
+	var NewBullet = enemyBulletAimed.instantiate()
+	NewBullet.spawnPos = global_position
+	main.add_child.call_deferred(NewBullet)

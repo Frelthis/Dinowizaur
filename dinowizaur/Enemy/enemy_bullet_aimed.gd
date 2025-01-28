@@ -12,6 +12,8 @@ var damage = 1
 
 func _ready():
 	global_position = spawnPos
+	look_at(player.position)
+	rotation_degrees -= 90
 	pass
 
 
