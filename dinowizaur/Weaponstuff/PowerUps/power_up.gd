@@ -25,10 +25,10 @@ func _ready():
 		$PowerUpSprite.texture = load("res://Weaponstuff/Bullets/Water/double.png")
 	elif weapon == 0:
 		weapon_change = "spread shot"
-		$PowerUpSprite.texture = load("res://Weaponstuff/Weapons/spread.png")
+		$PowerUpSprite.texture = load("res://Weaponstuff/Weapons/Spread/spread.png")
 	elif weapon == 1:
 		weapon_change = "double shooter"
-		$PowerUpSprite.texture = load("res://Weaponstuff/Weapons/doubleshot.png")
+		$PowerUpSprite.texture = load("res://Weaponstuff/Weapons/Double/doubleshot.png")
 
 
 func _physics_process(delta):

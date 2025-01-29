@@ -9,7 +9,7 @@ extends CharacterBody2D
 var direction: float
 var spawnPos: Vector2
 var spawnRotation: float
-var max_range := 800.0
+var max_range := 600.0
 var _travelled_distance = 0.0
 
 
@@ -35,9 +35,9 @@ func _physics_process(delta):
 
 
 func _on_area_2d_body_entered(body):
-	var instance = explosion.instantiate()
-	instance.spawnPos = global_position
-	main.add_child.call_deferred(instance)
+	#var instance = explosion.instantiate()
+	#instance.spawnPos = global_position
+	#main.add_child.call_deferred(instance)
 	queue_free()
 
 

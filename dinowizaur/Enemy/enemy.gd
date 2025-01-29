@@ -4,7 +4,7 @@ class_name Enemy
 @onready var main = get_tree().get_root().get_node("Main")
 @onready var player = get_tree().get_nodes_in_group("player")[0]
 @export var health = 2
-var SPEED = 100
+var SPEED = 150
 var enemyBullet = preload("res://Enemy/EnemyBulletDown.tscn")
 var enemyBulletAimed = preload("res://Enemy/enemy_bullet_aimed.tscn")
 var powerup = preload("res://Weaponstuff/PowerUps/power_up.tscn")

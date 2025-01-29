@@ -78,7 +78,6 @@ rotation = 1.5708
 shape = SubResource("WorldBoundaryShape2D_iaj13")
 
 [node name="top wall" type="StaticBody2D" parent="Walls"]
-visible = false
 position = Vector2(881, 96)
 rotation = 1.5708
 disable_mode = 2
@@ -98,6 +97,16 @@ offset_bottom = 990.0
 size_flags_horizontal = 2
 size_flags_vertical = 3
 color = Color(0, 0.156863, 0, 1)
+
+[node name="Top Bullet wall" type="StaticBody2D" parent="Walls/top wall"]
+position = Vector2(-238, 1.00085)
+collision_layer = 8
+collision_mask = 0
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Walls/top wall/Top Bullet wall"]
+position = Vector2(140, 0)
+rotation = 1.5708
+shape = SubResource("WorldBoundaryShape2D_iaj13")
 
 [node name="bottom wall" type="StaticBody2D" parent="Walls"]
 visible = false

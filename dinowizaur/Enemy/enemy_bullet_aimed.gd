@@ -2,7 +2,7 @@
 extends CharacterBody2D
 
 @onready var player = get_tree().get_nodes_in_group("player")[0]
-@export var Speed = 100.0
+@export var Speed = 400.0
 
 var direction: float
 var spawnPos: Vector2

@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://Stage Paths/PathSwoop.gd" id="1_t7ey2"]
 [ext_resource type="PackedScene" uid="uid://2wpju5785y7k" path="res://Enemy/enemy.tscn" id="2_b1dpd"]
 
-[node name="PathFollow2D" type="PathFollow2D"]
+[node name="EnemyonPath" type="PathFollow2D"]
 rotates = false
 cubic_interp = false
 loop = false

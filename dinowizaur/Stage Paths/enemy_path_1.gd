@@ -1,6 +1,6 @@
 extends Path2D
 
-var enemy = preload("res://path_follow_1.tscn")
+var enemy = preload("res://Stage Paths/path_follow_1.tscn")
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
