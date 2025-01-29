@@ -1,5 +1,6 @@
 extends PathFollow2D
 
+@export var atPathStop = false
 @export var speed: int
 
 func _ready():
@@ -11,6 +12,6 @@ func _ready():
 
 func _process(delta):
 	set_progress(get_progress() + speed * delta)
-	if progress_ratio == 1:
-		queue_free()
+	if progress_ratio > .5:
+		atPathStop = false
 	pass

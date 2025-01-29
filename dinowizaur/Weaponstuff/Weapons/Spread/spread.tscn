@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://b57ou3jd8cmpg"]
+
+[ext_resource type="Script" path="res://Weaponstuff/Weapons/Spread/spread.gd" id="1_10xb2"]
+[ext_resource type="Texture2D" uid="uid://cw5htbkihb457" path="res://Weaponstuff/Weapons/Spread/spreadwand.png" id="2_nntd1"]
+
+[node name="spread" type="Node2D"]
+position = Vector2(6, -15)
+scale = Vector2(0.35, 0.35)
+script = ExtResource("1_10xb2")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_nntd1")
+
+[node name="cooldown" type="Timer" parent="."]
+unique_name_in_owner = true
+wait_time = 0.125
+one_shot = true

@@ -1,0 +1,42 @@
+[gd_scene load_steps=6 format=3 uid="uid://dae3f7p8gdga7"]
+
+[ext_resource type="Script" path="res://Stage Paths/try_1.gd" id="1_77os0"]
+[ext_resource type="PackedScene" uid="uid://ckgf4vsjtfkuq" path="res://Stage Paths/path_stop.tscn" id="1_rahbw"]
+[ext_resource type="PackedScene" uid="uid://dqdt2apxlugge" path="res://Stage Paths/path_follow_1.tscn" id="2_6hstu"]
+
+[sub_resource type="Curve2D" id="Curve2D_favww"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 588, 47, 0, 0, 0, 0, 683, 135, 0, 0, 0, 0, 727, 219, 0, 0, 0, 0, 665, 350, 0, 0, 0, 0, 567, 411)
+}
+point_count = 5
+
+[sub_resource type="Curve2D" id="Curve2D_gj26n"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 566, 411, 0, 0, 0, 0, 445, 367, 0, 0, 0, 0, 357, 282, 0, 0, 0, 0, 355, 146, 0, 0, 0, 0, 419, 70, 0, 0, 0, 0, 511, 48, 0, 0, 0, 0, 588, 48)
+}
+point_count = 7
+
+[node name="Single enemy path" type="Node2D"]
+script = ExtResource("1_77os0")
+
+[node name="Path_RightSide" type="Path2D" parent="."]
+curve = SubResource("Curve2D_favww")
+
+[node name="left exit" parent="Path_RightSide" instance=ExtResource("1_rahbw")]
+position = Vector2(588, 47)
+PATH_ID = "RightSide"
+
+[node name="PathFollow2D" parent="Path_RightSide" instance=ExtResource("2_6hstu")]
+position = Vector2(588, 47)
+speed = 20
+
+[node name="Path_LeftSide" type="Path2D" parent="."]
+curve = SubResource("Curve2D_gj26n")
+
+[node name="left enterance" parent="Path_LeftSide" instance=ExtResource("1_rahbw")]
+position = Vector2(568, 410)
+PATH_ID = "LeftSide"
+
+[connection signal="body_exited" from="Path_RightSide/left exit" to="Path_RightSide/left exit" method="_on_body_exited"]
+[connection signal="changePath" from="Path_RightSide/left exit" to="." method="_on_changeFlightPath"]
+[connection signal="changePath" from="Path_LeftSide/left enterance" to="." method="_on_changeFlightPath"]

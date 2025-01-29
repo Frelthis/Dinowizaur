@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bxapl18mxuoe7"
-path="res://.godot/imported/spread.png-bde7deae1d0c512980ef94f990db79d6.ctex"
+uid="uid://c31rww0lwdfxo"
+path="res://.godot/imported/wand.png-8e574cdad9e8505084c20ed2a3984d7c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Weaponstuff/Weapons/spread.png"
-dest_files=["res://.godot/imported/spread.png-bde7deae1d0c512980ef94f990db79d6.ctex"]
+source_file="res://Weaponstuff/Weapons/Basic/wand.png"
+dest_files=["res://.godot/imported/wand.png-8e574cdad9e8505084c20ed2a3984d7c.ctex"]
 
 [params]
 

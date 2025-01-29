@@ -17,8 +17,6 @@ func _physics_process(delta):
 	target_velocity.y = direction.y * SPEED
 	velocity = target_velocity
 	move_and_slide()
-	print(global_position.x)
-	print(global_position.y)
 
 
 func _on_area_2d_area_entered(area: Area2D):

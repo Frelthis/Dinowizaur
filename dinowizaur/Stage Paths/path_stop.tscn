@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://ckgf4vsjtfkuq"]
+
+[ext_resource type="Script" path="res://Stage Paths/path_stop.gd" id="1_2wr8p"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_i6reo"]
+size = Vector2(1, 5)
+
+[node name="PathStop" type="Area2D"]
+collision_layer = 64
+collision_mask = 128
+script = ExtResource("1_2wr8p")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_i6reo")
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

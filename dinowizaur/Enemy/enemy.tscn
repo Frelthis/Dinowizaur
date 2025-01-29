@@ -4,13 +4,13 @@
 [ext_resource type="Texture2D" uid="uid://djarcxdyfwend" path="res://icon.svg" id="1_gcssg"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ucmyy"]
-size = Vector2(36, 20)
+size = Vector2(1, 1)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_pnt4a"]
 size = Vector2(36, 20)
 
 [node name="Enemy" type="CharacterBody2D"]
-collision_layer = 0
+collision_layer = 128
 collision_mask = 0
 script = ExtResource("1_bik03")
 
@@ -23,7 +23,6 @@ texture = ExtResource("1_gcssg")
 position = Vector2(0, -10)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-visible = false
 shape = SubResource("RectangleShape2D_ucmyy")
 
 [node name="Label" type="Label" parent="."]

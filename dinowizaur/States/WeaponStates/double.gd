@@ -2,7 +2,7 @@ extends State
 class_name DoubleWeapon
 
 @onready var main = get_tree().get_root().get_node("Main/Player")
-@onready var weapon = load("res://Weaponstuff/Weapons/double_weapon.tscn")
+@onready var weapon = load("res://Weaponstuff/Weapons/Double/double_weapon.tscn")
 var instance
 
 func Enter():
